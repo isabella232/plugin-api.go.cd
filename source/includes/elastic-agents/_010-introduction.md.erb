@@ -1,8 +1,6 @@
 # Elastic Agents
 
-## Current Version
-
-This document is for version 5.0 (the latest) of the elastic agent endpoint.
+<%= partial 'includes/shared/extension-info.md.erb', locals: { extension_name: 'elastic-agent', extension_version: '5.0', gocd_version: '19.3.0'} %>
 
 ## Background
 
@@ -160,5 +158,3 @@ See the video linked below to help make this a little more clear.
 <a href="https://drive.google.com/a/thoughtworks.com/file/d/1dv7uql2bsG9BdbPwecQReDm3tcqqLRyV/view?usp=sharing" target="_blank">
   <%= image_tag 'elastic-agents/new-job-assignment.png', {:title => "Job assignment with elastic agents", :alt => "Job assignment with elastic agents"} %>
 </a>
-
-<%= partial 'includes/shared/plugin-structure.md.erb', locals: { plugin_class: 'DockerElasticAgentPlugin', plugin_type: 'elastic-agent', endpoint_version: '5.0', minimum_version: '16.8.0' } %>
