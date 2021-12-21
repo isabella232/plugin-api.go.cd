@@ -18,3 +18,8 @@ jobs:
         run: bundle exec middleman build
         env:
           RUN_EXTERNAL_CHECKS: true
+      - name: Verbose build
+        if: failure()
+        run: bundle exec middleman build --verbose
+        env:
+          RUN_EXTERNAL_CHECKS: true
