@@ -13,9 +13,10 @@ namespace :static_checks do
 
   options = {
       :disable_external     => should_not_run_external_url_checks?,
-      :url_ignore           => [/([https]:\/\/(localhost):*)|([a-z0-9:\/-]*:8154)|([a-z0-9:\/-]*:8153)|(your)|(svn)|([a-zA-z@:\/_]*.git)/],
+      :ignore_urls          => [/([https]:\/\/(localhost):*)|([a-z0-9:\/-]*:8154)|([a-z0-9:\/-]*:8153)|(your)|(svn)|([a-zA-z@:\/_]*.git)/],
       :allow_hash_href      => true,
       :allow_missing_href   => true,
+      :check_external_hash  => true,
       :href_ignore          => ['/https:\/\/www\.youtube\.com\/.*/'],
       :validation           => {
           :report_invalid_tags  => false,
@@ -25,9 +26,10 @@ namespace :static_checks do
       :external_only        => false ,
       :check_html           => false,
       :typhoeus => {
-          :ssl_verifypeer => false,
+        :followlocation => true,
+        :connecttimeout => 500,
       },
-      :empty_alt_ignore     => true,
+      :ignore_missing_alt   => true,
       :log_level            => :info
   }
 
